@@ -1,0 +1,16 @@
+baseURL: https://example.org/
+languageCode: fr-FR
+DefaultContentLanguage: fr
+title: Hugo demo site
+description: Ceci est un site de démo
+theme: ananke
+
+params:
+  date_format: :date_long
+  read_more_copy: En savoir plus à ce sujet
+  ananke_socials:
+  - name: mastodon
+    url: https://mamot.fr/@nioc
+    rel: me noopener
+  - name: github
+    url: https://github.com/nioc
