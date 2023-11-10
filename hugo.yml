@@ -1,4 +1,4 @@
-baseURL: https://example.org/
+baseURL: https://test-hugo.nioc.eu/
 languageCode: fr-FR
 DefaultContentLanguage: fr
 title: Hugo demo site
