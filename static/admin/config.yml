@@ -1,0 +1,23 @@
+backend:
+  name: github
+  repo: nioc/test-hugo
+  branch: master
+publish_mode: editorial_workflow
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+site_url: https://test-hugo.nioc.eu
+locale: fr
+collections:
+  - name: post
+    label: Article
+    folder: "content/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: Layout, name: layout, widget: hidden, default: blog }
+      - { label: Titre, name: title, widget: "string" }
+      - { label: Date de publication, name: date, widget: datetime }
+      - { label: Description, name: description, widget: string }
+      - { label: Image de titre, name: thumbnail, widget: image, required: false }
+      - { label: Article, name: body, widget: markdown }
+      - { label: Tags, name: tags, widget: list, default: ["dev"], label_singular: "Ajouter", allow_add: false, collapsed: true }
