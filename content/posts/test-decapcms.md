@@ -4,9 +4,10 @@ date: 2023-11-10T02:02:29+01:00
 draft: true
 slug: decap-cms
 description: Nous allons tester DecapCMS pour gérer un site statique
+thumbnail: /images/uploads/workflow.svg
 tags:
-    - Dev
-    - Test Key
+  - Dev
+  - Test Key
 ---
 
 ## Decap CMS ?
