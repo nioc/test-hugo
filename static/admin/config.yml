@@ -3,21 +3,37 @@ backend:
   repo: nioc/test-hugo
   branch: master
 publish_mode: editorial_workflow
-media_folder: "static/images/uploads"
-public_folder: "/images/uploads"
+media_folder: static/images/uploads
+public_folder: /images/uploads
 site_url: https://test-hugo.nioc.eu
 locale: fr
 collections:
   - name: post
-    label: Article
-    folder: "content/posts"
+    label: Articles
+    label_singular: Article
+    folder: content/posts
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: Layout, name: layout, widget: hidden, default: blog }
-      - { label: Titre, name: title, widget: "string" }
+      - { label: Titre, name: title, widget: string }
+      - { label: Brouillon, name: draft, widget: boolean, default: false }
       - { label: Date de publication, name: date, widget: datetime }
       - { label: Description, name: description, widget: string }
       - { label: Image de titre, name: thumbnail, widget: image, required: false }
-      - { label: Article, name: body, widget: markdown }
-      - { label: Tags, name: tags, widget: list, default: ["dev"], label_singular: "Ajouter", allow_add: false, collapsed: true }
+      - { label: Contenu, name: body, widget: markdown }
+      - { label: Tags, name: tags, widget: list, default: ["dev"], label_singular: Ajouter, allow_add: false, collapsed: true }
+  - name: pages
+    label: Pages
+    label_singular: Page
+    description: Pages statiques
+    files:
+      - name: about
+        label: A propos
+        file: content/about/_index.md
+        fields:
+          - { label: Type, name: type, widget: hidden, default: page }
+          - { label: Menu, name: menu, widget: hidden, default: main }
+          - { label: Titre, name: title, widget: string, hint: Titre de la page }
+          - { label: Description, name: description, widget: string, required: false, hint: Sous titre de la page }
+          - { label: Contenu, name: body, widget: markdown, hint: Contenu }
