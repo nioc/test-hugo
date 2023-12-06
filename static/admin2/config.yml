@@ -2,6 +2,7 @@ backend:
   name: github
   repo: nioc/test-hugo
   branch: master
+  automatic_deployments: false
   base_url: https://sveltia-cms-authenticator.dev-c5f.workers.dev
 publish_mode: editorial_workflow
 media_folder: static/images/uploads
@@ -26,6 +27,7 @@ collections:
       - { label: Tags, name: tags, widget: list, default: ["dev"], label_singular: Ajouter, allow_add: false, collapsed: true }
   - name: pages
     label: Pages
+    icon: info
     label_singular: Page
     description: Pages statiques
     files:
